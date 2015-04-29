@@ -1,0 +1,28 @@
+web:
+  build: .
+  ports:
+    - "80:80"
+  links:
+    - db
+    - redis
+  volumes:
+    - .:/code
+    - ./config/php.ini:/etc/php.ini
+  working_dir: "/code/webroot"
+db:
+  image: "mysql:5"
+  ports:
+    - "3306:3306"
+  volumes:
+    - ./config/mysql:/etc/mysql/conf.d
+  volumes_from:
+    - "dockerlaravelcn_data_1"
+  environment:
+    - "MYSQL_ROOT_PASSWORD=jamlee"
+    - "MYSQL_DATABASE=laravel"
+
+redis:
+  image: "redis"
+  ports:
+    - "6379:6379"
+  
