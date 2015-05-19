@@ -1,4 +1,4 @@
-# 用docker为laravl打造的开发环境（中国优化版）
+# 用docker为laravel打造的开发环境（中国优化版）
 
 原项目: https://github.com/Jamlee/docker-laravel
 
@@ -23,6 +23,10 @@
 - docker-compose
 - [pipework](https://github.com/jpetazzo/pipework)
 
+准备工作：
+
+    echo "127.0.0.1 laravel.dev" >> /etc/hosts
+
 在你运行`docker-compose up`启动项目之前，你必须启动一个数据容器，这样才能够保持你的数据的数据不被`docker-compose rm`命令删除
 
     docker-compose -f data.yml up -d&& docker-compose up
@@ -35,7 +39,7 @@
 
 - 只需要`docker-compose -f data.yml up -d` 一次就够了,这样只是为了创建一个数据卷，用来保存mysql的数据。
 - 请确保你可以在dockerhub下载镜像。
-- 如果你需要自己构建镜像，请使用`docker-compoer -f docker-compose.dev.yml up`，可能会需要一段时间，遇到问题请及时和我联系1575103047@qq.co或者发issue，我会尽我所能的回答你。   
+- 如果你需要自己构建镜像，请使用`docker-compoer -f docker-compose.dev.yml up`，可能会需要一段时间，遇到问题请及时和我联系jamlee@jamlee.cn或者发issue，我会尽我所能的回答你。   
 
 
 ---

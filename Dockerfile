@@ -23,6 +23,7 @@ RUN yum install --enablerepo=epel,remi-php56,remi -y \
                               php-xml \
                               php-xdebug \
                               tcpdump
+RUN yum install -y vim git
 RUN sed -i -e "s|^;date.timezone =.*$|date.timezone = PRC |" /etc/php.ini \
     && mv /usr/sbin/tcpdump /usr/local/bin
 RUN curl -sS https://getcomposer.org/installer | php \
