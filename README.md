@@ -21,7 +21,6 @@
 
 - docker
 - docker-compose
-- [pipework](https://github.com/jpetazzo/pipework)
 
 准备工作：
 
@@ -30,6 +29,8 @@
 在你运行`docker-compose up`启动项目之前，你必须启动一个数据容器，这样才能够保持你的数据的数据不被`docker-compose rm`命令删除
 
     docker-compose -f data.yml up -d&& docker-compose up
+    ./ctl apache
+    service httpd start
 
 打开url http://localhost 或者 laravel.dev 你会看到服务已经启动:
 
@@ -53,7 +54,7 @@
 
 最后打开 url http://laravel.dev 就可以看到项目已经运行起来了。
 
-注意：你也可以通过修改config/httpd.conf,自己定义项目的名字project或者blog.
+注意：你也可以通过修改config/httpd.conf,自己定义项目的名字为project或者blog.
 
 
 ---
@@ -62,16 +63,12 @@
 
 综合0x1 0x2 的步骤,首先创建数据容器:
 
-    docker-compose -f data.yml up
+    docker-compose -f data.yml up && docker-compose up
 
-使用`ctl`:
-	
-    ./ctl start   #start all of servies
-    ./ctl stop    #stop all of servies
-    ./ctl rm      #rm all container but exculde data contianer `dataphp`
-    ./ctl restart #rm ,start
+使用`ctl`进入容器:
+
     ./ctl apache  #enter the apahce container
     ./ctl mysql   #enter the mysql  container
-    ./ctl redis   $enter the redis container
+    ./ctl redis   #enter the redis container
 
-当你使用脚本启动容器的时候，会给容器分派一个ip,默认为192.168.99.11。你可以通过修改脚本ctl的内容来修改它，一切都非常简单。
+
