@@ -1,5 +1,5 @@
 #!/bin/bash
-#anthor jamlee webboy89860@gmail.com
+#author jamlee webboy89860@gmail.com
 
 ip=192.168.99.11/24
 brip=192.168.99.254/24
