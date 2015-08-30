@@ -9,8 +9,8 @@ ENV httpd_conf ${code_root}/config/httpd.conf
 RUN rpm -ivh http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm \
     && rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm \
     && sed -i -e "s|plugins=1|plugins=0 |" /etc/yum.conf 
-
 ADD ./config/*.repo    /etc/yum.repos.d/ 
+
 RUN yum install -y httpd
 RUN yum install --enablerepo=epel,remi-php56,remi -y \
                               php \
