@@ -10,20 +10,10 @@ con_name=web
 
 #begin
 name=`docker-compose ps| grep $con_name | awk '{print $1}'`
-if [ "$1" == "restart" ]; then
-  #init enviroment
-  sudo docker-compose stop &&sudo  docker-compose rm -f &&sudo  docker-compose up -d
-
-  #assign ip to container
-  brName="brJamlee";
-  sudo pipework $brName $name $ip
-  sudo ip addr add $brip dev $brName
-fi
 
 if [ "$1" == "stop" ]; then
   sudo docker-compose stop &&sudo  docker-compose rm -f 
 fi
-
 
 if [ "$1" == "start" ]; then
   #init enviroment
