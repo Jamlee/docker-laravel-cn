@@ -1,0 +1,64 @@
+Directories                                         11
+Files                                               19
+
+Size
+  Lines of Code (LOC)                              568
+  Comment Lines of Code (CLOC)                     227 (39.96%)
+  Non-Comment Lines of Code (NCLOC)                341 (60.04%)
+  Logical Lines of Code (LLOC)                      95 (16.73%)
+    Classes                                         39 (41.05%)
+      Average Class Length                           2
+        Minimum Class Length                         0
+        Maximum Class Length                         5
+      Average Method Length                          1
+        Minimum Method Length                        0
+        Maximum Method Length                        3
+    Functions                                        2 (2.11%)
+      Average Function Length                        1
+    Not in classes or functions                     54 (56.84%)
+
+Cyclomatic Complexity
+  Average Complexity per LLOC                     0.03
+  Average Complexity per Class                    1.17
+    Minimum Class Complexity                      1.00
+    Maximum Class Complexity                      3.00
+  Average Complexity per Method                   1.19
+    Minimum Method Complexity                     1.00
+    Maximum Method Complexity                     3.00
+
+Dependencies
+  Global Accesses                                    0
+    Global Constants                                 0 (0.00%)
+    Global Variables                                 0 (0.00%)
+    Super-Global Variables                           0 (0.00%)
+  Attribute Accesses                                 5
+    Non-Static                                       5 (100.00%)
+    Static                                           0 (0.00%)
+  Method Calls                                      18
+    Non-Static                                      10 (55.56%)
+    Static                                           8 (44.44%)
+
+Structure
+  Namespaces                                        12
+  Interfaces                                         0
+  Traits                                             0
+  Classes                                           18
+    Abstract Classes                                 4 (22.22%)
+    Concrete Classes                                14 (77.78%)
+  Methods                                           17
+    Scope
+      Non-Static Methods                            17 (100.00%)
+      Static Methods                                 0 (0.00%)
+    Visibility
+      Public Methods                                14 (82.35%)
+      Non-Public Methods                             3 (17.65%)
+  Functions                                          2
+    Named Functions                                  0 (0.00%)
+    Anonymous Functions                              2 (100.00%)
+  Constants                                          0
+    Global Constants                                 0 (0.00%)
+    Class Constants                                  0 (0.00%)
+
+Tests
+  Classes                                            0
+  Methods                                            0
