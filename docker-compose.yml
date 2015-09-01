@@ -1,12 +1,12 @@
 web:
-  image: index.alauda.cn/jamlee/docker-laravel-cn:latest
+  image: laravel:v1
   ports:
     - "80:80"
   links:
     - db
     - redis
   extends:
-    file: common.yml
+    file: ./yml/common.yml
     service: common
   command: "/bin/sh -c 'while true; do sleep 1; done'"
 db:
@@ -16,7 +16,7 @@ db:
   volumes:
     - ./config/mysql:/etc/mysql/conf.d
   volumes_from:
-    - "dockerlaravelcn_data_1"
+    - "LogDataDev"
   environment:
     - "MYSQL_ROOT_PASSWORD=jamlee"
     - "MYSQL_DATABASE=laravel"

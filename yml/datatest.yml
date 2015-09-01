@@ -1,4 +1,4 @@
-datatest:
+datadev:
    image: ubuntu
    container_name: LogDataTest
    volumes:
