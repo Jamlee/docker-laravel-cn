@@ -1,0 +1,7 @@
+common:
+  volumes:
+    - ..:/code
+    - ../config/php/php.ini:/etc/php.ini
+    - ../config/sys/env:/root/.bashrc
+  working_dir: "/code/webroot/"
+

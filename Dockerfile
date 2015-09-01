@@ -1,15 +1,15 @@
 FROM centos:6
-MAINTAINER Takayuki Miwa <jamlee@jamlee.cn>
+MAINTAINER jamlee <jamlee@jamlee.cn>
 
 ENV code_root /code
-ENV httpd_conf ${code_root}/config/httpd.conf
+ENV httpd_conf ${code_root}/config/apache/httpd.conf
 
 #change the software repo
 
 RUN rpm -ivh http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm \
     && rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm \
     && sed -i -e "s|plugins=1|plugins=0 |" /etc/yum.conf 
-ADD ./config/*.repo    /etc/yum.repos.d/ 
+ADD ./config/sys/*.repo    /etc/yum.repos.d/ 
 
 RUN yum install -y httpd
 RUN yum install --enablerepo=epel,remi-php56,remi -y \
@@ -31,7 +31,7 @@ RUN curl -sS https://getcomposer.org/installer | php \
     && curl -O https://phar.phpunit.de/phpunit.phar \
     && chmod +x phpunit.phar \
     && mv phpunit.phar /usr/local/bin/phpunit
-ADD ./config/config.json /root/.composer/
+ADD ./config/php/config.json /root/.composer/
 RUN composer global require "laravel/installer=~1.1"
 ENV PATH=$PATH:/root/.composer/vendor/bin
 ADD .  $code_root

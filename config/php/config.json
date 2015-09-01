@@ -1,0 +1,9 @@
+{
+    "config": {
+
+    },
+    "repositories": [
+            {"type": "composer", "url": "http://packagist.phpcomposer.com"},
+            {"packagist": false}
+    ]
+}

@@ -1,5 +1,5 @@
 webtest:
-  image: index.alauda.cn/jamlee/docker-laravel-cn:latest
+  image: laravel:v1
   ports:
     - "80:80"
   links:
