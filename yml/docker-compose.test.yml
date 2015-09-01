@@ -1,0 +1,26 @@
+webtest:
+  image: laravel:v1
+  ports:
+    - "80:80"
+  links:
+    - dbtest
+    - redistest
+  extends:
+    file: common.yml
+    service: common
+dbtest:
+  image: "mysql:5.6"
+  ports:
+    - "3306:3306"
+  volumes:
+    - ../config/mysql:/etc/mysql/conf.d
+  volumes_from:
+    - "LogDataTest"
+  environment:
+    - "MYSQL_ROOT_PASSWORD=jamlee"
+    - "MYSQL_DATABASE=laravel"
+
+redistest:
+  image: "redis"
+  ports:
+    - "6379:6379"

@@ -1,0 +1,5 @@
+datatest:
+   image: ubuntu
+   container_name: LogDataTest
+   volumes:
+     - "var/lib/mysql"

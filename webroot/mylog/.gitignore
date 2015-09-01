@@ -1,7 +1,0 @@
-/vendor
-/node_modules
-Homestead.yaml
-.env
-.idea/
-.env
-build/
