@@ -1,4 +1,7 @@
-# 用docker为laravel打造的开发环境（中国优化版）
+
+> This Repo is not maintained anymore.
+
+#用docker为laravel打造的开发环境（中国优化版）
 
 原项目: https://github.com/Jamlee/docker-laravel
 
